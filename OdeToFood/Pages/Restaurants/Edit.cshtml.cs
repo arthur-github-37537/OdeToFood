@@ -61,16 +61,8 @@ namespace OdeToFood.Pages.Restaurants
                 restaurantData.Add(Restaurant);
             }
             restaurantData.Commit();
+            TempData["Message"] = "Restaurant saved!";
             return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
-
-            //if(ModelState.IsValid)
-            //{
-            //    Restaurant = restaurantData.Update(Restaurant);
-            //    restaurantData.Commit();
-            //    return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
-            //}
-            //Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
-            //return Page();
         }
     }
 }
