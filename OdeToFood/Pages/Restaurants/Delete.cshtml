@@ -1,8 +1,19 @@
 ﻿@page "{restaurantId}"
 @model OdeToFood.Pages.Restaurants.DeleteModel
 @{
-    Layout = null;
-    // Do not use a layout page
+    Layout = "_Layout2";
+    // Using a non existing Layout2 file results in an error
+
+    /*
+     * An unhandled exception occurred while processing the request.
+     * InvalidOperationException: The layout view '_Layout2' could not be located. The following locations were searched:
+     * /Pages/Restaurants/_Layout2.cshtml
+     * /Pages/_Layout2.cshtml
+     * /Pages/Shared/_Layout2.cshtml
+     * /Views/Shared/_Layout2.cshtml
+     * 
+     * 
+     */
 }
 
 <!DOCTYPE html>
