@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace OdeToFood.ViewComponents
 {
     // A ViewComponent derives from ViewComponent base class
-    public class RestaurantCountViewComponents : ViewComponent
+    public class RestaurantCountViewComponent : ViewComponent
     {
         private readonly IRestaurantData restaurantData;
 
         // Use a constructor to access the data
-        public RestaurantCountViewComponents(IRestaurantData restaurantData)
+        public RestaurantCountViewComponent(IRestaurantData restaurantData)
         {
             this.restaurantData = restaurantData;
         }
