@@ -1,37 +1,18 @@
 ﻿@page "{restaurantId}"
 @model OdeToFood.Pages.Restaurants.DeleteModel
 @{
-    Layout = "_Layout2";
-    // Using a non existing Layout2 file results in an error
-
-    /*
-     * An unhandled exception occurred while processing the request.
-     * InvalidOperationException: The layout view '_Layout2' could not be located. The following locations were searched:
-     * /Pages/Restaurants/_Layout2.cshtml
-     * /Pages/_Layout2.cshtml
-     * /Pages/Shared/_Layout2.cshtml
-     * /Views/Shared/_Layout2.cshtml
-     * 
-     * 
-     */
+    // Not specifying a layout will result in using a default layout!
+    // The default layout is specified in _ViewStart.cshtml
+    // html tags <!DOCTYPE>, <html>, <head> and <body> are already specified in _Layout.cshtml
+    // When using _Layout.cshtml you do not need these tags in this view
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Delete</title>
-</head>
-<body>
-
-    <h2>Delete!</h2>
-    <div class="alert alert-danger">
-        Are you sure you want to delete @Model.Restaurant.Name?
-    </div>
-    <form method="post">
-        <button type="submit" class="btn btn-danger">Yes!</button>
-        <a asp-page="List" class="btn btn-default">Cancel</a>
-    </form>
-</body>
-</html>
+<h2>Delete!</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete @Model.Restaurant.Name?
+</div>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Yes!</button>
+    <a asp-page="List" class="btn btn-default">Cancel</a>
+</form>
