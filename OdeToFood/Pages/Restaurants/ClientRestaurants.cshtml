@@ -1,0 +1,27 @@
+﻿@page
+@model OdeToFood.Pages.Restaurants.ClientRestaurantsModel
+@{
+    ViewData["Title"] = "ClientRestaurants";
+}
+
+<h2>ClientRestaurants</h2>
+
+@{// The following is typically not recommended by Scott Allen
+    // Inline javascript code
+    // It is recommended to put javascript code in external .js files
+}
+
+@section Scripts {
+    <script>
+
+        $(function () {
+            $.ajax("/api/restaurants/",
+                { method: "get" })
+                .then(function (response) {
+                    console.dir(response);
+                });
+        });
+
+    </script>
+}
+
