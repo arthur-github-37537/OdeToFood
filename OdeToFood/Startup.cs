@@ -57,12 +57,22 @@ namespace OdeToFood
                 app.UseHsts();
             }
 
+            //app.Use(SayHelloWorldMiddleware);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseNodeModules(env);
             app.UseCookiePolicy();
 
             app.UseMvc();
+        }
+
+        private RequestDelegate SayHelloWorldMiddleware(RequestDelegate arg)
+        {
+            return async ctx =>
+            {
+                await ctx.Response.WriteAsync("Hello,World");
+            };
         }
     }
 }
