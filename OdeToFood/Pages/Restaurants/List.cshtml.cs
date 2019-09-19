@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using OdeToFood.Data;
 using OdeToFood.Core;
+using Microsoft.Extensions.Logging;
 
 namespace OdeToFood.Pages.Restaurants
 {
@@ -20,7 +21,7 @@ namespace OdeToFood.Pages.Restaurants
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
-        public ListModel(IConfiguration config, IRestaurantData restaurantData)
+        public ListModel(IConfiguration config, IRestaurantData restaurantData, ILogger<ListModel> logger)
         {
             this.config = config;
             this.restaurantData = restaurantData;
