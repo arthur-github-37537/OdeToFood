@@ -30,6 +30,9 @@ namespace OdeToFood.Pages.Restaurants
         }
         public void OnGet(string searchTerm)
         {
+            // Whether a log message appears is dependent on LogLevel as configured in appsettings.json
+            // To make sure a message appears we use LogError
+            logger.LogError("Executing ListModel");
             Message = config["Message"];
             Restaurants = restaurantData.GetRestaurantsByName(SearchTerm);
         }
